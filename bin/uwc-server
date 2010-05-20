@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'uwchat'
+
+ARGV[0] ||= Uwchat::Common::HOST
+ARGV[1] ||= Uwchat::Common::PORT
+ARGV[2] ||= Uwchat::Common::MAXCONS
+
+server = Uwchat::Server.new( ARGV[1], ARGV[0], ARGV[2], $stderr, true, false)
+server.start
+server.join
